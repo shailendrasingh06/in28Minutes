@@ -19,6 +19,16 @@ services:
       - currency-network
     environment:
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+
+  currency-conversion:
+    image: in28min/mmv2-currency-conversion-service:0.0.1-SNAPSHOT
+    # mem_limit: 300m
+    ports:
+      - "8100:8100"
+    networks:
+      - currency-network
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
       
 
 networks:
